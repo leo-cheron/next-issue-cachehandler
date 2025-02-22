@@ -1,7 +1,16 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from "next"
 
 const nextConfig: NextConfig = {
-  /* config options here */
-};
+	experimental: {
+		// dynamicIO: true,
+		// useCache: true,
+	},
 
-export default nextConfig;
+	cacheHandler: require.resolve('./cache-handler'),
+
+	logging: {
+		fetches: {},
+	},
+}
+
+export default nextConfig
